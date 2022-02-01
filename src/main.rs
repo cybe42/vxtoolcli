@@ -1,6 +1,8 @@
-mod sayhello;
+mod vxtcli;
+mod cmd_manager;
+//mod command_src/hello.rs
 
 fn main() {
-    sayhello::sayhello();
-    //test
+    const VERSION: Option<&str> = option_env!("CARGO_PKG_VERSION");
+    vxtcli::start(String::from(VERSION.unwrap_or("unknown")));
 }
