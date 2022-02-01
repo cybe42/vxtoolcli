@@ -1,2 +1,2 @@
 # vxtoolcli
-(V)uln E(x)tra Tool cli
+(V)uln E(x)tra Tool CLI
