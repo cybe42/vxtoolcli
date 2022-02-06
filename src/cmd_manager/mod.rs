@@ -1,20 +1,24 @@
 use std::collections::HashMap;
 mod help;
 mod clear;
+mod delwebhook;
 
 static COMMANDS: &'static [&'static str] = &[
     "help",
-    "clear"
+    "clear",
+    "delwebhook"
 ];
 
 static CMD_SOURCE: &'static [fn(Vec<&str>)->bool] = &[
     help::command,
-    clear::command
+    clear::command,
+    delwebhook::command
 ];
 
 static CMD_HELP: &'static [&'static str] = &[
     "help [<command>] - Displays all commands and their usages.",
-    "clear - Clears the terminal screen."
+    "clear - Clears the terminal screen.",
+    "delwebhook [<webhook url>] - Deletes the given webhook."
 ];
 
 
