@@ -1,16 +1,20 @@
 use std::collections::HashMap;
 mod help;
+mod clear;
 
 static COMMANDS: &'static [&'static str] = &[
-    "help"
+    "help",
+    "clear"
 ];
 
 static CMD_SOURCE: &'static [fn(Vec<&str>)->bool] = &[
-    help::command
+    help::command,
+    clear::command
 ];
 
 static CMD_HELP: &'static [&'static str] = &[
-    "help [<command>] - Displays all commands and their usages."
+    "help [<command>] - Displays all commands and their usages.",
+    "clear - Clears the terminal screen."
 ];
 
 
