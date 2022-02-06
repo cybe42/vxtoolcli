@@ -819,6 +819,7 @@ version = "0.1.0"
 dependencies = [
  "reqwest",
  "termion",
+ "tokio",
 ]
 
 [[package]]
