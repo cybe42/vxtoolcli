@@ -7,12 +7,14 @@ use crate::cmd_manager;
 
 fn input_loop() {
     
-    print!("{}   Enter command> ", color::Fg(color::Green));
+    print!("{}Enter command> ", color::Fg(color::Green));
     io::stdout().flush().unwrap();
     let mut raw_command = String::new();
     io::stdin().read_line(&mut raw_command)
         .ok()
         .expect(format!("{}I could not read a line from stdin.", color::Fg(color::Red)).as_str());
+    print!("{}", color::Fg(color::White));
+    io::stdout().flush().unwrap();
 
     let command: Vec<&str> = raw_command.trim().split(" ").collect();
     let mut _cmd_head: String = String::new();
@@ -24,7 +26,7 @@ fn input_loop() {
     _cmd_head = _cmd_head.to_lowercase();
     let cmds: HashMap<String, fn(Vec<&str>)->bool> = cmd_manager::return_commands();
     if !cmds.contains_key(&_cmd_head) {
-        println!("      Could not find any command called \"{}\"", _cmd_head);
+        println!("Could not find any command called \"{}\"", _cmd_head);
     } else {
         let func = cmds.get(&_cmd_head).unwrap();
         //func();
@@ -34,8 +36,8 @@ fn input_loop() {
             let cmdhelplist: HashMap<String, String> = cmd_manager::return_help();
 
             match cmdhelplist.contains_key(&_cmd_head) {
-                true => println!("      (!) Usage: {}", cmdhelplist.get(&_cmd_head).unwrap()),
-                false=> println!("      (!) Command returned a usage fail."),
+                true => println!("(!) Usage: {}", cmdhelplist.get(&_cmd_head).unwrap()),
+                false=> println!("(!) Command returned a usage fail."),
             }
         }
     }
