@@ -61,6 +61,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5827cebf4670468b8772dd191856768aedcb1b0278a04f989f7766351917b9dc"
 
 [[package]]
+name = "crosstermion"
+version = "0.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a05e035b986ed55343b748f978fd8d2508dbab8492ef228aa7896735b1d51931"
+
+[[package]]
 name = "encoding_rs"
 version = "0.8.30"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -663,6 +669,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "sys"
+version = "0.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e788d0b8692abbe8b3818a8b132e081438264f285170188cb214a5b790c37ea1"
+
+[[package]]
 name = "tempfile"
 version = "3.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -815,9 +827,11 @@ checksum = "accd4ea62f7bb7a82fe23066fb0957d48ef677f6eeb8215f372f52e48bb32426"
 
 [[package]]
 name = "vxtoolcli"
-version = "0.1.0"
+version = "1.3.1"
 dependencies = [
+ "crosstermion",
  "reqwest",
+ "sys",
  "termion",
  "tokio",
  "url",

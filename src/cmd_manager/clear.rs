@@ -1,5 +1,9 @@
 //use crate::cmd_manager;
+
+#[cfg(target_os = "linux")]
 use termion::{clear, cursor};
+
+
 use std::io;
 use std::io::Write;
 

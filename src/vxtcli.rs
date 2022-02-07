@@ -1,12 +1,14 @@
 use std::io;
 use std::io::Write;
+
+#[cfg(target_os = "linux")]
 use termion::{color};
+
 use std::collections::HashMap;
 
 use crate::cmd_manager;
 
 fn input_loop() {
-    
     print!("{}Enter command> ", color::Fg(color::Green));
     io::stdout().flush().unwrap();
     let mut raw_command = String::new();
